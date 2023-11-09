@@ -1,11 +1,19 @@
-import { useRef, useState } from "react";
+import { useReducer, useState } from "react";
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "increment":
+      return {count: state.count + 1}
+  }
+}
 
 function App() {
+  const [state, dispatch] = useReducer(reducer, {count: 0})
   const [userInput, setUserInput] = useState("");
-const [count, setCount] = useState(0)
-const [color, setColor] = useState(false)
+  // const [count, setCount] = useState(0)
+  const [color, setColor] = useState(false)
   return (
-    <main className="App" style={{color: color ? "#fff952" : "#000"}}>
+    <main className="App" style={{ color: color ? "#fff952" : "#000" }}>
       <input
         type="text"
         required
