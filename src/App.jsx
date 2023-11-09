@@ -6,6 +6,8 @@ const reducer = (state, action) => {
       return {count: state.count + 1}
     case "decrement":
       return {count: state.count - 1}
+      default:
+      throw new Error();
   }
 }
 
@@ -29,8 +31,8 @@ function App() {
       <br />
       <section>
         {/* <button onClick={focusOnInput}>Focus</button> */}
-        <button onClick={(() => setCount(prev => prev - 1))}>-</button>
-        <button onClick={(() => setCount(prev => prev + 1))}>+</button>
+        <button onClick={(() => dispatch({type: 'decrement'}))}>-</button>
+        <button onClick={(() => dispatch({type: 'increament'}))}>+</button>
         <button onClick={(() => setColor(prev => !prev))}>Color</button>
       </section>
 
