@@ -7,7 +7,8 @@ const reducer = (state, action) => {
     case "decrement":
       return { count: state.count - 1 }
     case 'newUserInput':
-      return { userInput }
+      return { userInput: action.payload }
+      
     default:
       throw new Error();
   }
