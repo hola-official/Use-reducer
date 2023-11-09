@@ -8,7 +8,8 @@ const reducer = (state, action) => {
       return { count: state.count - 1 }
     case 'newUserInput':
       return { userInput: action.payload }
-      
+      case 'tgColor':
+        return {color: !state.color}
     default:
       throw new Error();
   }
