@@ -1,4 +1,4 @@
-import { useReducer, useState } from "react";
+import { useReducer } from "react";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -17,16 +17,17 @@ const reducer = (state, action) => {
 
 function App() {
   const [state, dispatch] = useReducer(reducer, { count: 0, userInput: '', color: false })
-  const [userInput, setUserInput] = useState("");
+  // const [userInput, setUserInput] = useState("");
   // const [count, setCount] = useState(0)
-  const [color, setColor] = useState(false)
+  // const [color, setColor] = useState(false)
+
   return (
-    <main className="App" style={{ color: color ? "#fff952" : "#000" }}>
+    <main className="App" style={{ color: state.color ? "#fff952" : "#000" }}>
       <input
         type="text"
         required
-        value={userInput}
-        onChange={(e) => setUserInput(e.target.value)}
+        value={state.userInput}
+        onChange={(e) => dispatch({type: 'newUserInput, payload: e.target.value'})}
       />
       <p>
         Renders: <code>{state.count}</code>
@@ -37,13 +38,13 @@ function App() {
         {/* <button onClick={focusOnInput}>Focus</button> */}
         <button onClick={(() => dispatch({ type: 'decrement' }))}>-</button>
         <button onClick={(() => dispatch({ type: 'increment' }))}>+</button>
-        <button onClick={(() => setColor(prev => !prev))}>Color</button>
+        <button onClick={(() => dispatch({type: 'tgColor'}))}>Color</button>
       </section>
 
       <br />
       <br />
 
-      <p>{userInput}</p>
+      <p>{state.userInput}</p>
     </main>
   );
 }
