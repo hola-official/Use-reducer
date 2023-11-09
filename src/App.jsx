@@ -5,7 +5,7 @@ function App() {
 const [count, setCount] = useState(0)
 const [color, setColor] = useState(false)
   return (
-    <main className="App" style={{color: color ? "#fff" : "#fff92"}}>
+    <main className="App" style={{color: color ? "#fff952" : "#000"}}>
       <input
         type="text"
         required
@@ -21,18 +21,13 @@ const [color, setColor] = useState(false)
         {/* <button onClick={focusOnInput}>Focus</button> */}
         <button onClick={(() => setCount(prev => prev - 1))}>-</button>
         <button onClick={(() => setCount(prev => prev + 1))}>+</button>
-        <button onClick={(() => setColor(prev => !prev))}>Start</button>
+        <button onClick={(() => setColor(prev => !prev))}>Color</button>
       </section>
-      <button onClick={resetTimer}>Reset</button>
-      <br />
-      <br />
-
-      <p>Seconds: {seconds}</p>
 
       <br />
       <br />
 
-      <p>{randomInput}</p>
+      <p>{userInput}</p>
     </main>
   );
 }
