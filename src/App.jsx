@@ -33,7 +33,7 @@ function App() {
       <input
         type="text"
         value={state.userInput}
-        onChange={(e) => dispatch({ type: ACTION.NEW_USER_INPUT, payload: e.target.value})}
+        onChange={(e) => dispatch({ type: ACTION.NEW_USER_INPUT, payload: e.target.value })}
       />
       <p>
         Renders: <code>{state.count}</code>
