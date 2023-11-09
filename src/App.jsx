@@ -25,14 +25,14 @@ function App() {
         onChange={(e) => setUserInput(e.target.value)}
       />
       <p>
-        Renders: <code>{count}</code>
+        Renders: <code>{state.count}</code>
       </p>
       <br />
       <br />
       <section>
         {/* <button onClick={focusOnInput}>Focus</button> */}
         <button onClick={(() => dispatch({type: 'decrement'}))}>-</button>
-        <button onClick={(() => dispatch({type: 'increament'}))}>+</button>
+        <button onClick={(() => dispatch({type: 'increment'}))}>+</button>
         <button onClick={(() => setColor(prev => !prev))}>Color</button>
       </section>
 
