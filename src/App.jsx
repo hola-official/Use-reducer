@@ -15,11 +15,11 @@ const reducer = (state, action) => {
   }
 }
 
-const ACTION = () => {
+const ACTION = {
   INCREMENT: 'increment',
   DECREMENT: 'decrement',
   NEW_USER_INPUT: 'newUserInput',
-  TG_COLOR: 'tgColor'
+  TG_COLOR: 'tgColor',
 }
 
 function App() {
@@ -32,9 +32,8 @@ function App() {
     <main className="App" style={{ color: state.color ? "#fff952" : "#000" }}>
       <input
         type="text"
-        required
         value={state.userInput}
-        onChange={(e) => dispatch({ type: 'newUserInput, payload: e.target.value' })}
+        onChange={(e) => dispatch({ type: ACTION.NEW_USER_INPUT, payload: e.target.value})}
       />
       <p>
         Renders: <code>{state.count}</code>
@@ -43,9 +42,9 @@ function App() {
       <br />
       <section>
         {/* <button onClick={focusOnInput}>Focus</button> */}
-        <button onClick={(() => dispatch({ type: 'decrement' }))}>-</button>
-        <button onClick={(() => dispatch({ type: 'increment' }))}>+</button>
-        <button onClick={(() => dispatch({ type: 'tgColor' }))}>Color</button>
+        <button onClick={(() => dispatch({ type: ACTION.DECREMENT }))}>-</button>
+        <button onClick={(() => dispatch({ type: ACTION.INCREMENT }))}>+</button>
+        <button onClick={(() => dispatch({ type: ACTION.TG_COLOR }))}>Color</button>
       </section>
 
       <br />
