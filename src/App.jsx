@@ -16,7 +16,7 @@ const reducer = (state, action) => {
 }
 
 function App() {
-  const [state, dispatch] = useReducer(reducer, { count: 0 })
+  const [state, dispatch] = useReducer(reducer, { count: 0, userInput: '', color: false })
   const [userInput, setUserInput] = useState("");
   // const [count, setCount] = useState(0)
   const [color, setColor] = useState(false)
