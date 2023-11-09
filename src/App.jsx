@@ -27,7 +27,7 @@ function App() {
         type="text"
         required
         value={state.userInput}
-        onChange={(e) => dispatch({type: 'newUserInput, payload: e.target.value'})}
+        onChange={(e) => dispatch({ type: 'newUserInput, payload: e.target.value' })}
       />
       <p>
         Renders: <code>{state.count}</code>
@@ -38,7 +38,7 @@ function App() {
         {/* <button onClick={focusOnInput}>Focus</button> */}
         <button onClick={(() => dispatch({ type: 'decrement' }))}>-</button>
         <button onClick={(() => dispatch({ type: 'increment' }))}>+</button>
-        <button onClick={(() => dispatch({type: 'tgColor'}))}>Color</button>
+        <button onClick={(() => dispatch({ type: 'tgColor' }))}>Color</button>
       </section>
 
       <br />
